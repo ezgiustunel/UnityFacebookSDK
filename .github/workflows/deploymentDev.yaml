@@ -15,7 +15,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          echo "Assets/Elephant.meta" > metaList
           find ./Assets/FacebookSDK/ -name \*.meta >> metaList
       - run: mkdir a
         
