@@ -15,17 +15,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          find ./Assets/FacebookSDK >> metaList1
-      - run: mkdir a
+          find ./Assets/FacebookSDK -name \*.meta >> metaListEzgi
+      - run: mkdir b
         
       - uses: pCYSl5EDgo/create-unitypackage@master
         with:
-          package-path: 'a/Facebook.unitypackage'
-          include-files: metaList1
+          package-path: 'b/FacebookEzgi.unitypackage'
+          include-files: metaListEzgi
       - uses: actions/upload-artifact@master
         with:
-          path: a/Facebook.unitypackage
-          name: Facebook.unitypackage
+          path: b/FacebookEzgi.unitypackage
+          name: FacebookEzgi.unitypackage
 
       
       
