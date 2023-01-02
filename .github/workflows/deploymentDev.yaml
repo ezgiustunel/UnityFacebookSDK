@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          find ./Assets/FacebookSDK/Plugins/Editor -name \*.meta >> metaList6
+          find ./Assets/FacebookSDK/Plugins/Gameroom -name \*.meta >> metaList6
       - run: mkdir b
         
       - uses: pCYSl5EDgo/create-unitypackage@master
