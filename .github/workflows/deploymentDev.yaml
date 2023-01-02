@@ -1,0 +1,33 @@
+name: Create Facebook Unity Package
+on:
+  workflow_dispatch:
+    inputs:
+      gameKitVersion:
+        description: 'v1.0.0_facebook_internal'
+        required: true
+  push:
+    branches:
+      - dev
+
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          echo "Assets/Elephant.meta" > metaList
+          find ./Assets/FacebookSDK/ -name \*.meta >> metaList
+      - run: mkdir a
+        
+      - uses: pCYSl5EDgo/create-unitypackage@master
+        with:
+          package-path: 'a/Facebook.unitypackage'
+          include-files: metaList
+      - uses: actions/upload-artifact@master
+        with:
+          path: a/Facebook.unitypackage
+          name: Facebook.unitypackage
+
+      
+      
+
