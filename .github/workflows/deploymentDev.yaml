@@ -15,13 +15,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
-          find ./Assets/FacebookSDK -name \*.meta >> metaList7
+          find ./Assets/FacebookSDK -name \*.meta >> metaList8
       - run: mkdir b
         
       - uses: pCYSl5EDgo/create-unitypackage@master
         with:
           package-path: 'b/FacebookEzgi7.unitypackage'
-          include-files: metaList7
+          include-files: metaList8
       - uses: actions/upload-artifact@master
         with:
           path: b/FacebookEzgi7.unitypackage
